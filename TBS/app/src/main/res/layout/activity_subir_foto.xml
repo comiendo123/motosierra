@@ -7,47 +7,48 @@
     tools:context=".subir_foto">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/camara"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="55dp"
-        android:layout_marginEnd="24dp"
         android:layout_marginBottom="37dp"
         android:text="Usar Camara"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/subirfoto"
-        app:layout_constraintStart_toEndOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+        app:layout_constraintStart_toEndOf="@+id/galeria"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/galeria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="55dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="37dp"
-        android:onClick="irpublicar"
+        android:onClick="onClick"
+
         android:text="galeria"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@+id/camara"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/subirfoto"
-        android:layout_width="125dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="55dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="39dp"
-        android:onClick="onClick"
-        android:text="Subir Foto"
+        android:id="@+id/subir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="irpublicar"
+        android:text="subir foto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintStart_toEndOf="@+id/camara"
         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 
     <ImageView
@@ -107,4 +108,5 @@
                 tools:layout_editor_absoluteY="32dp" />
         </LinearLayout>
     </HorizontalScrollView>
+
 </android.support.constraint.ConstraintLayout>

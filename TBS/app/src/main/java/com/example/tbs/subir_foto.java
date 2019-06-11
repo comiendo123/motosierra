@@ -3,6 +3,8 @@ package com.example.tbs;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,15 +21,19 @@ public class subir_foto extends AppCompatActivity implements View.OnClickListene
     ImageView imagenadicional3;
     Button subirfoto;
     int movil;
+    ImageView imagen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subir_foto);
+
+        imagen= (ImageView) findViewById(R.id.imagenprincipal);
+
         imagenprincipal = (ImageView) findViewById(R.id.imagenprincipal);
         imagenadicional1 = (ImageView) findViewById(R.id.imagenadicional1);
         imagenadicional2 = (ImageView) findViewById(R.id.imagenadicional2);
         imagenadicional3 = (ImageView) findViewById(R.id.imagenadicional3);
-        subirfoto = (Button) findViewById(R.id.subirfoto);
+        subirfoto = (Button) findViewById(R.id.galeria);
 
         imagenprincipal.setOnClickListener(this);
         imagenadicional1.setOnClickListener(this);
@@ -41,10 +47,11 @@ public class subir_foto extends AppCompatActivity implements View.OnClickListene
         startActivity(ir_publicar);
 
     }
+
     @Override
     public void onClick(View v){
         //esto hace que la imAGEN chica al seleccionarse tiene que actualizarse en la principal
-        switch (v.getId()){
+      /*  switch (v.getId()){
             case R.id.imagenadicional1:
                imagenprincipal.setImageResource(R.mipmap.image1);
                movil = R.mipmap.image1;
@@ -71,10 +78,24 @@ public class subir_foto extends AppCompatActivity implements View.OnClickListene
                 Toast mensaje = Toast.makeText(this, "que funione",Toast.LENGTH_SHORT);
                 mensaje.show();
 
-                break;
+                break;*/
 
+      //llama a cargar imagen
+        cargarimagen();
 
         }
+        private void cargarimagen(){
+        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        intent.setType("image/");
+        startActivityForResult(intent.createChooser(intent,"seleccionee"),10);
 
     }
+        @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK){
+            Uri path=data.getData();
+            imagen.setImageURI(path);
+        }
+        }
 }

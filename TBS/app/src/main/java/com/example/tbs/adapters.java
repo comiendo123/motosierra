@@ -1,32 +1,36 @@
 package com.example.tbs;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class adapters extends RecyclerView.Adapter<adapters.ViewHolder> {
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         ImageView imagen;
-        private TextView descripcion;
-        private TextView adicional;
         private TextView titulo;
+        private TextView cantidad;
+        private TextView costo;
+        private TextView descripcion;
+        private TextView disponibilidad;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            descripcion =(TextView)itemView.findViewById(R.id.descripcion);
-            adicional = (TextView)itemView.findViewById(R.id.adicional);
-            titulo  =itemView.findViewById(R.id.titulo);
             imagen = (ImageView) itemView.findViewById(R.id.img);
+            titulo  =(TextView) itemView.findViewById(R.id.titulo);
+            cantidad  = (TextView) itemView.findViewById(R.id.cantidad);
+               costo  =(TextView) itemView.findViewById(R.id.costo);
+            descripcion =(TextView)itemView.findViewById(R.id.descripcion);
+           disponibilidad = (TextView)itemView.findViewById(R.id.disponibilidad);
+
+
+
         }
     }
     public List<models> listaa;
@@ -44,10 +48,13 @@ public class adapters extends RecyclerView.Adapter<adapters.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position){
-        holder.titulo.setText(listaa.get(position).getTitle());
-        holder.descripcion.setText(listaa.get(position).getDescripcion());
-        holder.adicional.setText(listaa.get(position).getAdicional());
         holder.imagen.setImageResource(listaa.get(position).getImg());
+        holder.titulo.setText(listaa.get(position).getTitle());
+        holder.cantidad.setText(listaa.get(position).getCantidad());
+        holder.costo.setText(listaa.get(position).getCosto());
+        holder.disponibilidad.setText(listaa.get(position).getDisponibilidad());
+        holder.descripcion.setText(listaa.get(position).getDescripcion());
+
     }
 
     @Override
@@ -94,4 +101,6 @@ public class adapters extends RecyclerView.Adapter<adapters.ViewHolder> {
             adicional.setText(this.list.get(position).getAdicional());
         return convertView;
     }*/
+//resacteee
+
 }

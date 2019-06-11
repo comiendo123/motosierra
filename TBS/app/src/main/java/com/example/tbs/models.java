@@ -7,16 +7,21 @@ public class models {
     private String title;
     private String descripcion;
     private String adicional;
+    private String cantidad;
+    private String costo;
+    private String disponibilidad;
 
 
     public models(){
 
     }
-    public models( String title, String descripcion, String adicional, int img){
+    public models( String title, String descripcion, String cantidad,  String costo, String disponibilidad, int img){
 
         this.title = title;
         this.descripcion=descripcion;
-        this.adicional = adicional;
+        this.cantidad = cantidad;
+        this.costo = costo;
+        this.disponibilidad = disponibilidad;
         this.img=img;
 
     }
@@ -35,25 +40,43 @@ public class models {
         return title;
     }
 
-    public void setTitle(String title){
-        this.title = title;
+    public String getCantidad(){
+        return cantidad;
     }
+
+    public String getCosto(){
+        return costo;
+    }
+
+    public String getDisponibilidad(){
+        return disponibilidad;
+    }
+
 
     public String getDescripcion(){
 
         return descripcion;
     }
+    public void setTitle(String title){
+        this.title = title;
+    }
+
+
+    public void setCantidad(String cantidad){
+        this.cantidad = cantidad;
+    }
+
+    public void setCosto(String costo){
+        this.costo = costo;
+    }
+
+
+    public void setDisponibilidad(String disponibilidad){
+        this.disponibilidad = disponibilidad;
+    }
 
     public void setDescripcion(String descripcion){
         this.descripcion = descripcion;
-    }
-
-    public String getAdicional(){
-        return adicional;
-    }
-
-    public void setAdicional(String adicional){
-        this.adicional = adicional;
     }
 
 

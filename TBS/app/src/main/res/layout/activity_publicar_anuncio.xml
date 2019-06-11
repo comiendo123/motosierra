@@ -13,6 +13,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
+        android:background="#FF5722"
         android:text="PUBLICAR ANUNCIO"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.705"
@@ -35,12 +36,13 @@
         <View
             android:id="@+id/view5"
             android:layout_width="match_parent"
-            android:layout_height="17dp" />
+            android:layout_height="31dp" />
 
         <EditText
-            android:id="@+id/editText15"
+            android:id="@+id/nombrearticulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="#FF5722"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Nombre del Articulo" />
@@ -48,12 +50,15 @@
         <View
             android:id="@+id/view2"
             android:layout_width="match_parent"
-            android:layout_height="17dp" />
+            android:layout_height="30dp" />
 
         <EditText
-            android:id="@+id/editText11"
+            android:id="@+id/descripcion"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="72dp"
+            android:layout_gravity="top"
+            android:layout_marginBottom="30dp"
+            android:background="#FF5722"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Descripcion" />
@@ -61,12 +66,13 @@
         <View
             android:id="@+id/view4"
             android:layout_width="match_parent"
-            android:layout_height="17dp" />
+            android:layout_height="30dp" />
 
         <EditText
-            android:id="@+id/editText16"
+            android:id="@+id/precio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="#FF5722"
             android:ems="10"
             android:inputType="number"
             android:text="Precio" />
@@ -74,12 +80,13 @@
         <View
             android:id="@+id/view3"
             android:layout_width="match_parent"
-            android:layout_height="17dp" />
+            android:layout_height="30dp" />
 
         <EditText
-            android:id="@+id/editText17"
+            android:id="@+id/cantidaddisponible"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="#FF5722"
             android:ems="10"
             android:inputType="number"
             android:text="Cantidad Disponible" />
@@ -87,12 +94,13 @@
         <View
             android:id="@+id/view6"
             android:layout_width="match_parent"
-            android:layout_height="17dp" />
+            android:layout_height="30dp" />
 
         <EditText
-            android:id="@+id/editText18"
+            android:id="@+id/telefono"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="#FF5722"
             android:ems="10"
             android:inputType="number"
             android:text="Movil" />
@@ -152,33 +160,35 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
-        android:id="@+id/spinner3"
+        android:id="@+id/sCategoria"
         android:layout_width="163dp"
         android:layout_height="36dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        android:background="#FF5722"
         app:layout_constraintBottom_toBottomOf="@+id/tableLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
         app:layout_constraintVertical_bias="1.0" />
 
     <Spinner
-        android:id="@+id/spinner4"
+        android:id="@+id/sDisponibilidad"
         android:layout_width="194dp"
         android:layout_height="35dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        android:background="#FF5722"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
-        app:layout_constraintStart_toEndOf="@+id/spinner3"
+        app:layout_constraintStart_toEndOf="@+id/sCategoria"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
         app:layout_constraintVertical_bias="0.097" />
 
     <LinearLayout
         android:id="@+id/linearLayout5"
-        android:layout_width="347dp"
-        android:layout_height="118dp"
+        android:layout_width="344dp"
+        android:layout_height="42dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
@@ -189,7 +199,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tableLayout">
 
         <Button
-            android:id="@+id/button9"
+            android:id="@+id/localizacion"
             android:layout_width="91dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -202,11 +212,45 @@
             android:layout_weight="1" />
 
         <Button
-            android:id="@+id/button10"
+            android:id="@+id/publicar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="onClick"
             android:text="Publicar" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/nombreetiquteado"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout5"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/enviarboton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="onClick"
+        android:text="enviar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/nombreetiquteado"
+        app:layout_constraintHorizontal_bias="0.382"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
+
+    <android.support.constraint.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </android.support.constraint.ConstraintLayout>
